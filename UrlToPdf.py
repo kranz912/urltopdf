@@ -2,7 +2,7 @@ import pdfkit
 import httplib2
 from bs4 import BeautifulSoup
 import urllib
-import os
+import os,sys
 import urllib.request
 
 http= httplib2.Http()
@@ -17,7 +17,6 @@ def urltopdf(url,output):
     for link in soup.findAll('link'):
         if (link.has_attr("href")):
             link['href'] = "https://{}{}".format(location, link["href"])
-            print(link['href'])
             response = urllib.request.urlopen(link['href'])
             if link['href'].find('/'):
                 file= link['href'].rsplit('/', 1)[1]
@@ -36,10 +35,8 @@ def urltopdf(url,output):
 
         if(script.has_attr('src')):
             script["src"]="https://{}{}".format(location,script["src"])
-    print(soup)
     open("tmp//response.html","w",encoding='utf-8').write(str(soup))
     pdfkit.from_file("tmp//response.html",output,css=csslist)
 
 
-
-urltopdf('https://www.google.com/','tmp\\kraz.pdf')
+urltopdf(sys.argv[1],sys.argv[2])
