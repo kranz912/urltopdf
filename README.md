@@ -21,7 +21,10 @@
   
   Note: on windows wkthmltopdf must be added as a path variable
   ### usage
+```  
+python urltopdf.py <url> <path>
 ```
-python urltopdf.py https://www.google.com/ tmp\\kraz.pdf
+```
+python urltopdf.py https://www.google.com/ kraz.pdf
 
 ```
