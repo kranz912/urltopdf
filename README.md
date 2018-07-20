@@ -19,4 +19,8 @@
   
   https://wkhtmltopdf.org/downloads.html
   
- 
+  Note: on windows wkthmltopdf must be added as a path variable
+```
+urltopdf('https://www.google.com/','tmp\\kraz.pdf')
+
+```
