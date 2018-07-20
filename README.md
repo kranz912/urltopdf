@@ -20,7 +20,8 @@
   https://wkhtmltopdf.org/downloads.html
   
   Note: on windows wkthmltopdf must be added as a path variable
+  ### usage
 ```
-urltopdf('https://www.google.com/','tmp\\kraz.pdf')
+python urltopdf.py https://www.google.com/ tmp\\kraz.pdf
 
 ```
